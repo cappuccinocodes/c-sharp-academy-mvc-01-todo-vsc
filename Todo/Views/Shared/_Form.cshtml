@@ -1,0 +1,10 @@
+@model TodoItem
+
+<form asp-action="Insert" id="form-action" method="post" role="form">
+    <div asp-validation-summary="All" ></div>
+            <label asp-for="Name" ></label>
+            <input asp-for="Id" type="hidden"  />
+            <input asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+            <input type="submit" id="form-button" value="Add Todo" />
+</form>
