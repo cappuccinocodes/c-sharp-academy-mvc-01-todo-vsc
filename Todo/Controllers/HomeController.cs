@@ -90,5 +90,23 @@ namespace Todo.Controllers
             }
             return Redirect("https://localhost:5001/");
         }
+        
+        [HttpPost]
+        public JsonResult Delete(int id)
+        {
+            using (SqliteConnection con =
+                   new SqliteConnection("Data Source=db.sqlite"))
+            {
+                using (var tableCmd = con.CreateCommand())
+                {
+                    con.Open();
+                    tableCmd.CommandText = $"DELETE from todo WHERE Id = '{id}'";
+                    tableCmd.ExecuteNonQuery();
+                }
+            }
+
+            return Json(new {});
+        }
+
     }
 }

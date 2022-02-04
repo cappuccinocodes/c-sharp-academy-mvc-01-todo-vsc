@@ -2,7 +2,7 @@
 
         <table>
             <thead>
-            <tr class="table-primary">
+            <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Name</th>
             </tr>
@@ -13,6 +13,8 @@
                 <tr>
                     <td class="todos-column" scope="row">@t.Id</td>
                     <td class="todos-column">@t.Name</td>
+                    <td class="buttons-column">
+                        <input type="submit" value="Delete" onClick="deleteTodo(@t.Id)"/>
                 </tr>
             }
             </tbody>
