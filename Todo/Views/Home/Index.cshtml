@@ -15,6 +15,7 @@
                     <td class="todos-column">@t.Name</td>
                     <td class="buttons-column">
                         <input type="submit" value="Delete" onClick="deleteTodo(@t.Id)"/>
+                        <input type="submit" value="Update" onClick="populateForm(@t.Id)"/>
                 </tr>
             }
             </tbody>
